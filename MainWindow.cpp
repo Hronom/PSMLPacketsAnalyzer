@@ -61,7 +61,7 @@ void MainWindow::fillTable()
             QTableWidgetItem *xPacketSizeItem = new QTableWidgetItem();
             xPacketSizeItem->setData(Qt::DisplayRole, mListOfValues.at(i).toInt());
             QTableWidgetItem *xPacketCountItem = new QTableWidgetItem();
-            xPacketCountItem->setData(Qt::DisplayRole, mListOfValues.count(xPacketSizeItem->text()));
+            xPacketCountItem->setData(Qt::DisplayRole, 1);
 
             mUI->ListOfPackets->insertRow(0);
             mUI->ListOfPackets->setItem(0, 0, xPacketSizeItem);
@@ -106,7 +106,6 @@ void MainWindow::drawGraph()
     QBrush xArrowBrush;
     xArrowBrush.setColor(Qt::black);
     xArrowBrush.setStyle(Qt::SolidPattern);
-
     QPolygonF xArrowX;
     xArrowX << QPointF(xEndLineXValue, -10)
             << QPointF(xEndLineXValue + 10, 0)
@@ -280,5 +279,5 @@ void MainWindow::on_verticalSlider_valueChanged(int value)
 
 void MainWindow::on_action_triggered()
 {
-    QMessageBox::about(this, tr("О программе"), tr("Программа <b>RTPPacketsAnalyzer</b> создана для анализа отчётов созданных программой <a href='http://www.wireshark.org'>WireShark</a><hr>Автор: Hronom<br>email: <a href='mailto:hronom@gmail.com'>hronom@gmail.com</a>"));
+    QMessageBox::about(this, tr("О программе"), tr("Программа <b>PSMLPacketsAnalyzer</b> создана для анализа отчётов созданных программой <a href='http://www.wireshark.org'>WireShark</a><hr>Автор: Hronom<br>email: <a href='mailto:hronom@gmail.com'>hronom@gmail.com</a>"));
 }
